@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShobhaSarees: Premium Handloom & Designer Ethnic Sarees. Shop our curated collection via WhatsApp Business.">
+    <meta name="keywords" content="sarees, handloom, ethnic wear, Indian sarees, designer sarees, traditional, craftsmanship, women's fashion, ShobhaSarees">
+    <title>ShobhaSarees - Premium Handloom & Designer Ethnic Sarees ✨🧿💖</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/FFD700/FFFFFF?text=SS" type="image/png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Tailwind Configuration */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-color: #F8E7E0; /* Soft Peach */
+            --secondary-color: #D4B8AE; /* Muted Rose */
+            --accent-color: #A0522D; /* Sienna */
+            --text-dark: #333333;
+            --text-light: #FDFDFD;
+            --whatsapp-green: #25D366;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+        }
+
+        /* Smooth scroll for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+
+        /* Hero section background pattern/image */
+        .hero-background {
+            background-image: url('https://placehold.co/1920x1080/F8E7E0/D4B8AE?text=ShobhaSarees+Elegance'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* Overlay for hero section text readability */
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.4); /* Light overlay */
+        }
+
+        /* Floating WhatsApp button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: var(--text-light);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Saree card hover effect */
+        .saree-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .saree-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Instagram post hover effect */
+        .instagram-post {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-post img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .instagram-post:hover img {
+            transform: scale(1.05);
+        }
+
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .instagram-post:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        /* Hamburger menu icon */
+        .hamburger-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger-icon.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-icon.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile navigation menu */
+        .mobile-nav-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%); /* Hidden by default */
+        }
+
+        .mobile-nav-menu.open {
+            transform: translateX(0); /* Visible */
+        }
+
+        /* Testimonial card styling */
+        .testimonial-card {
+            background-color: var(--text-light);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 fixed w-full z-50 rounded-b-xl">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#home" class="text-3xl font-bold text-accent-color flex items-center gap-2">
+                <img src="https://placehold.co/40x40/A0522D/FFFFFF?text=SS" alt="ShobhaSarees Logo" class="rounded-full">
+                ShobhaSarees
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#home" class="hover:text-accent-color transition duration-300">Home</a></li>
+                <li><a href="#catalogue" class="hover:text-accent-color transition duration-300">Catalogue</a></li>
+                <li><a href="#instagram" class="hover:text-accent-color transition duration-300">Instagram</a></li>
+                <li><a href="#about" class="hover:text-accent-color transition duration-300">About Us</a></li>
+                <li><a href="#contact" class="hover:text-accent-color transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Icon -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="hamburger-icon focus:outline-none">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <div id="mobile-menu" class="mobile-nav-menu fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-40 p-6 pt-20 md:hidden">
+            <ul class="flex flex-col space-y-6 text-xl font-medium">
+                <li><a href="#home" class="block py-2 hover:text-accent-color transition duration-300">Home</a></li>
+                <li><a href="#catalogue" class="block py-2 hover:text-accent-color transition duration-300">Catalogue</a></li>
+                <li><a href="#instagram" class="block py-2 hover:text-accent-color transition duration-300">Instagram</a></li>
+                <li><a href="#about" class="block py-2 hover:text-accent-color transition duration-300">About Us</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-accent-color transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero-background flex items-center justify-center min-h-screen text-center relative pt-20 md:pt-0">
+            <div class="relative z-10 p-8 rounded-xl bg-white bg-opacity-70 shadow-2xl max-w-3xl mx-4">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-accent-color leading-tight mb-4 drop-shadow-lg">
+                    ShobhaSarees
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 mb-8 italic">
+                    Premium Handloom & Designer Ethnic Sarees ✨🧿💖
+                </p>
+                <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20buying%20a%20saree%20from%20your%20latest%20collection!" target="_blank" class="inline-block bg-accent-color text-black text-xl md:text-2xl font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-secondary-color transition duration-300 ease-in-out transform hover:scale-105">
+                    Shop Now on WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Catalogue Section -->
+        <section id="catalogue" class="py-16 md:py-24 bg-primary-color">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent-color mb-12">Our Exquisite Collection</h2>
+
+                <!-- Catalogue Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Saree Card 1 -->
+                    <div class="saree-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x600/D4B8AE/FFFFFF?text=Silk+Saree" alt="Elegant Silk Saree" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Banarasi Silk Saree</h3>
+                            <p class="text-gray-600 mb-4">A timeless classic with intricate zari work.</p>
+                            <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20the%20Banarasi%20Silk%20Saree!" target="_blank" class="inline-block bg-whatsapp-green text-black px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition duration-300">
+                                Shop on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Saree Card 2 -->
+                    <div class="saree-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x600/A0522D/FFFFFF?text=Kanjivaram+Saree" alt="Vibrant Kanjivaram Saree" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Kanjivaram Silk Saree</h3>
+                            <p class="text-gray-600 mb-4">Rich weave and traditional motifs.</p>
+                            <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20the%20Kanjivaram%20Silk%20Saree!" target="_blank" class="inline-block bg-whatsapp-green text-black px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition duration-300">
+                                Shop on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Saree Card 3 -->
+                    <div class="saree-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x600/F8E7E0/A0522D?text=Georgette+Saree" alt="Lightweight Georgette Saree" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Georgette Saree</h3>
+                            <p class="text-gray-600 mb-4">Flowy and elegant, perfect for modern occasions.</p>
+                            <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20the%20Georgette%20Saree!" target="_blank" class="inline-block bg-whatsapp-green text-black px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition duration-300">
+                                Shop on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Saree Card 4 -->
+                    <div class="saree-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x600/D4B8AE/A0522D?text=Cotton+Saree" alt="Comfortable Cotton Saree" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Handloom Cotton Saree</h3>
+                            <p class="text-gray-600 mb-4">Breathable and comfortable, ideal for daily wear.</p>
+                            <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20the%20Handloom%20Cotton%20Saree!" target="_blank" class="inline-block bg-whatsapp-green text-black px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition duration-300">
+                                Shop on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Add more saree cards as needed -->
+                </div>
+
+                <div class="mt-12">
+                    <p class="text-lg text-gray-700 mb-6">
+                        For our complete range and latest designs, download our full catalogue:
+                    </p>
+                    <a href="https://www.africau.edu/images/default/sample.pdf" target="_blank" class="inline-block bg-accent-color text-black text-lg font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-secondary-color transition duration-300 ease-in-out transform hover:scale-105">
+                        Download Full Catalogue (PDF)
+                    </a>
+                    <p class="mt-4 text-sm text-gray-500">
+                        (Note: This is a sample PDF. Actual catalogue will be provided by the brand.)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Gallery Section -->
+        <section id="instagram" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent-color mb-12">ShobhaSarees on Instagram</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Follow us for our latest collections, styling tips, and customer testimonials!
+                </p>
+
+                <!-- Instagram Grid (Placeholder) -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Instagram Post 1 -->
+                    <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="instagram-post block rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x600/D4B8AE/FFFFFF?text=Insta+Post+1" alt="Instagram Post 1 - Customer testimonial" class="w-full h-auto object-cover">
+                        <div class="instagram-overlay">
+                            "Absolutely stunning saree! The quality is superb." - Priya S.
+                        </div>
+                    </a>
+                    <!-- Instagram Post 2 -->
+                    <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="instagram-post block rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x600/A0522D/FFFFFF?text=Insta+Post+2" alt="Instagram Post 2 - New collection highlight" class="w-full h-auto object-cover">
+                        <div class="instagram-overlay">
+                            "New arrivals alert! Discover our festive collection."
+                        </div>
+                    </a>
+                    <!-- Instagram Post 3 -->
+                    <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="instagram-post block rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x600/F8E7E0/A0522D?text=Insta+Post+3" alt="Instagram Post 3 - Handloom craftsmanship" class="w-full h-auto object-cover">
+                        <div class="instagram-overlay">
+                            "The artistry of handloom, woven with love."
+                        </div>
+                    </a>
+                    <!-- Instagram Post 4 -->
+                    <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="instagram-post block rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x600/D4B8AE/A0522D?text=Insta+Post+4" alt="Instagram Post 4 - Customer wearing saree" class="w-full h-auto object-cover">
+                        <div class="instagram-overlay">
+                            "Our beautiful customer glowing in ShobhaSarees."
+                        </div>
+                    </a>
+                    <!-- Instagram Post 5 -->
+                    <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="instagram-post block rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x600/A0522D/F8E7E0?text=Insta+Post+5" alt="Instagram Post 5 - Detailed fabric shot" class="w-full h-auto object-cover">
+                        <div class="instagram-overlay">
+                            "Close-up of our exquisite fabric texture."
+                        </div>
+                    </a>
+                    <!-- Instagram Post 6 -->
+                    <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="instagram-post block rounded-xl overflow-hidden shadow-md">
+                        <img src="https://placehold.co/600x600/F8E7E0/D4B8AE?text=Insta+Post+6" alt="Instagram Post 6 - Traditional styling" class="w-full h-auto object-cover">
+                        <div class="instagram-overlay">
+                            "Embrace tradition with a modern twist."
+                        </div>
+                    </a>
+                </div>
+                <p class="mt-8 text-sm text-gray-500">
+                    (Note: Live Instagram feed integration requires API access and a backend. These are placeholder images.)
+                </p>
+                <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="inline-block mt-8 bg-accent-color text-black text-lg font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-secondary-color transition duration-300 ease-in-out transform hover:scale-105">
+                    Visit Our Instagram
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-primary-color">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent-color mb-12">Our Story</h2>
+                <div class="bg-white rounded-xl shadow-md p-8 md:p-12 text-lg leading-relaxed">
+                    <p class="mb-6">
+                        Welcome to ShobhaSarees, a dream woven into reality by our founder, <span class="font-semibold text-accent-color">Shobha Devi</span>. With a deep-rooted passion for Indian textiles and a vision to bring authentic craftsmanship to every woman, ShobhaSarees was established to celebrate the timeless elegance of the saree.
+                    </p>
+                    <p class="mb-6">
+                        Growing up surrounded by the rich cultural heritage of India, Shobha Devi was captivated by the intricate artistry of handloom weaving. She embarked on a journey to connect directly with skilled artisans across various states, ensuring that each saree in our collection tells a story of tradition, dedication, and unparalleled quality.
+                    </p>
+                    <p class="mb-6">
+                        At ShobhaSarees, we believe that a saree is more than just an attire; it's an expression of grace, strength, and heritage. Our curated collection features a blend of traditional handlooms and contemporary designer pieces, meticulously selected to offer you nothing but the best. We are committed to promoting sustainable practices and empowering artisan communities.
+                    </p>
+                    <p class="italic text-secondary-color">
+                        "Every thread at ShobhaSarees is woven with love, tradition, and a promise of elegance."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Testimonials Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent-color mb-12">What Our Customers Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p class="text-lg italic mb-4">
+                            "The saree I received from ShobhaSarees is absolutely exquisite! The fabric quality is top-notch, and the design is even more beautiful in person. Highly recommend!"
+                        </p>
+                        <p class="font-semibold text-accent-color">- Anjali Sharma</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p class="text-lg italic mb-4">
+                            "I'm so impressed with the unique collection and the seamless ordering process via WhatsApp. ShobhaSarees truly delivers on its promise of premium quality."
+                        </p>
+                        <p class="font-semibold text-accent-color">- Deepika Rao</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p class="text-lg italic mb-4">
+                            "Finally found a brand that understands traditional elegance with a modern touch. My Kanjivaram saree from ShobhaSarees is a masterpiece. Thank you!"
+                        </p>
+                        <p class="font-semibold text-accent-color">- Kavita Singh</p>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <p class="text-lg italic mb-4">
+                            "The handloom cotton saree is incredibly comfortable and stylish. Perfect for everyday wear while still looking graceful. Excellent customer service too!"
+                        </p>
+                        <p class="font-semibold text-accent-color">- Sneha Patel</p>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <p class="text-lg italic mb-4">
+                            "ShobhaSarees has become my go-to for special occasion sarees. The attention to detail and the rich feel of the fabric are unmatched. Love my recent purchase!"
+                        </p>
+                        <p class="font-semibold text-accent-color">- Pooja Reddy</p>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <p class="text-lg italic mb-4">
+                            "The Banarasi silk saree I ordered was beyond my expectations. The colors are vibrant, and the zari work is stunning. It felt luxurious to wear."
+                        </p>
+                        <p class="font-semibold text-accent-color">- Ritu Gupta</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page Section -->
+        <section id="contact" class="py-16 md:py-24 bg-primary-color">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent-color mb-12">Connect With Us</h2>
+                <div class="bg-white rounded-xl shadow-md p-8 md:p-12 text-lg leading-relaxed">
+                    <p class="mb-6">
+                        We'd love to hear from you! Reach out to us through our preferred channels:
+                    </p>
+                    <div class="flex flex-col space-y-6 items-center">
+                        <!-- WhatsApp Business -->
+                        <a href="https://wa.me/919876543210?text=Hello%20ShobhaSarees,%20I%20have%20a%20query." target="_blank" class="flex items-center justify-center bg-whatsapp-green text-black text-xl font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 w-full md:w-auto">
+                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.35 4.95l-1.4 5.16 5.25-1.37c1.45.79 3.08 1.21 4.71 1.21 5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zm.04 18.01c-1.45 0-2.86-.38-4.09-1.1l-.29-.17-3.03.79.8-2.95-.19-.3c-.87-1.47-1.34-3.16-1.34-4.96 0-4.52 3.67-8.19 8.19-8.19s8.19 3.67 8.19 8.19-3.67 8.19-8.19 8.19zm4.52-6.16c-.25-.12-.87-.44-.99-.49-.12-.05-.26-.07-.37.06-.11.12-.42.49-.51.59-.1.1-.19.12-.35.06s-.66-.24-.95-.59c-.29-.35-.48-.65-.67-.97-.19-.32-.02-.3-.14-.32s-.25-.06-.37-.08c-.12-.02-.31-.05-.48-.05-.17 0-.44.06-.66.3-.22.25-.84.83-.84 2.02 0 1.19.86 2.34.98 2.49.12.15 1.7 2.58 4.12 3.52 2.42.94 2.9.79 3.43.74.52-.05 1.3-.53 1.48-1.04.18-.51.18-.94.12-1.04-.05-.12-.19-.17-.4-.28z"/>
+                            </svg>
+                            WhatsApp Business: +91 98765 43210
+                        </a>
+
+                        <!-- Instagram Handle -->
+                        <a href="https://www.instagram.com/shobhasareesofficial/" target="_blank" class="flex items-center justify-center bg-pink-600 text-black text-xl font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 w-full md:w-auto">
+                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.2C4.6 4.2 4.2 4.6 4.2 7.6v8.8c0 3 0.4 3.4 3.4 3.4h8.8c3 0 3.4-0.4 3.4-3.4V7.6c0-3-0.4-3.4-3.4-3.4H7.6zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm5.5-9.5c-0.83 0-1.5 0.67-1.5 1.5s0.67 1.5 1.5 1.5 1.5-0.67 1.5-1.5-0.67-1.5-1.5-1.5z"/>
+                            </svg>
+                            Instagram: @shobhasareesofficial
+                        </a>
+
+                        <!-- Email Contact (Optional) -->
+                        <div class="text-center mt-4">
+                            <p class="text-gray-700">
+                                For general inquiries, you can also email us:
+                            </p>
+                            <a href="mailto:info@shobhasarees.com" class="text-accent-color hover:underline font-semibold">info@shobhasarees.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20ShobhaSarees!" target="_blank" class="whatsapp-float">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.35 4.95l-1.4 5.16 5.25-1.37c1.45.79 3.08 1.21 4.71 1.21 5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zm.04 18.01c-1.45 0-2.86-.38-4.09-1.1l-.29-.17-3.03.79.8-2.95-.19-.3c-.87-1.47-1.34-3.16-1.34-4.96 0-4.52 3.67-8.19 8.19-8.19s8.19 3.67 8.19 8.19-3.67 8.19-8.19 8.19zm4.52-6.16c-.25-.12-.87-.44-.99-.49-.12-.05-.26-.07-.37.06-.11.12-.42.49-.51.59-.1.1-.19.12-.35.06s-.66-.24-.95-.59c-.29-.35-.48-.65-.67-.97-.19-.32-.02-.3-.14-.32s-.25-.06-.37-.08c-.12-.02-.31-.05-.48-.05-.17 0-.44.06-.66.3-.22.25-.84.83-.84 2.02 0 1.19.86 2.34.98 2.49.12.15 1.7 2.58 4.12 3.52 2.42.94 2.9.79 3.43.74.52-.05 1.3-.53 1.48-1.04.18-.51.18-.94.12-1.04-.05-.12-.19-.17-.4-.28z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-color text-black py-8 text-center rounded-t-xl">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 ShobhaSarees. All rights reserved.</p>
+            <p class="mt-2 text-sm">Crafted with ❤️ for timeless elegance.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for smooth scrolling and mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('nav a'); // Select all nav links, including mobile
+
+            // Toggle mobile menu visibility
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                mobileMenuButton.classList.toggle('open');
+                // Disable body scroll when menu is open
+                document.body.classList.toggle('overflow-hidden');
+            });
+
+            // Smooth scroll and close mobile menu on link click
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor click behavior
+
+                    const targetId = link.getAttribute('href').substring(1); // Get target section ID
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('open')) {
+                            mobileMenu.classList.remove('open');
+                            mobileMenuButton.classList.remove('open');
+                            document.body.classList.remove('overflow-hidden');
+                        }
+
+                        // Scroll to target section with offset for fixed header
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset - 20; // Added extra 20px padding
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
